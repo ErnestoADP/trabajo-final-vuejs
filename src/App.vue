@@ -1,0 +1,85 @@
+<template>
+  <div id="app">
+    <Navbar/>
+
+    <router-view></router-view>
+    
+    
+   
+     <footer>  <Footer/>   </footer>
+  </div>
+  
+</template>
+
+
+<script>
+import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer.vue";
+
+
+export default {
+  name: "App",
+  components: {
+    Navbar,
+    Footer,
+   
+  },
+
+};
+</script>
+
+
+
+
+
+<style>
+html{
+  min-height: 100%;
+  position: relative;
+}
+body{
+  margin: 0;
+  margin-bottom: 40px;
+   background: linear-gradient(to right, #2e2e2e7c, #9c9c9c9a, #e9e9e9);
+    background-size: 400% 400%;
+    animation: body 10s infinite ease-in-out;
+}
+
+@keyframes body {
+  0%{
+     background-position: 0 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0 50%;
+  }
+ 
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+
+ 
+  
+}
+
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>
