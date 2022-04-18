@@ -28,10 +28,24 @@
             </template>
             <b-dropdown-item to="/Iniciar_sesion">Inicia sesión</b-dropdown-item>
             <b-dropdown-item to="/Registrate">Regístrate</b-dropdown-item>
-            <b-dropdown-item to="/Cerrar_sesion">Cerrar sesión</b-dropdown-item>
+            <b-dropdown-item @click="cerrarSesion">Cerrar sesión</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
   </div>
 </template>
+
+<script>
+import { mapActions } from 'vuex'
+export default {
+  methods:{
+    ...mapActions(["cerrar_Sesion"]),
+    cerrarSesion(){
+      this.cerrar_Sesion()
+      this.$router.push("/");
+         
+    }
+  },
+};  
+</script>

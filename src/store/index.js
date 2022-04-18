@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 Vue.use(Vuex)
 
@@ -26,6 +26,12 @@ export default new Vuex.Store({
             alert("Sesión iniciada con exito!");
             return true;
         },
+        async cerrar_Sesion(context) {
+            const auth = getAuth();
+            await signOut(auth);
+            alert("Sesión cerrada!");
+
+        }
     },
     modules: {}
 })
