@@ -2,13 +2,14 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
-import Cerrar_sesion from '../views/Cerrar_sesion.vue'
 import Iniciar_sesion from '../views/Iniciar_sesion.vue'
 import Registrate from '../views/Registrate.vue'
 import Carrito from "../views/Carrito.vue";
 import Login from "../views/Login.vue";
 import Manga from "../views/Manga.vue";
 import Usuario from "../views/Usuario.vue";
+import Error404 from "../views/Error404.vue";
+
 
 
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
@@ -28,11 +29,7 @@ const routes = [{
         name: 'AboutView',
         component: AboutView
     },
-    {
-        path: '/cerrar_sesion',
-        name: 'Cerrar_sesion',
-        component: Cerrar_sesion
-    },
+
     {
         path: '/iniciar_sesion',
         name: 'Iniciar_sesion',
@@ -59,6 +56,10 @@ const routes = [{
         path: "/usuario",
         name: "Usuario",
         component: Usuario,
+    }, {
+        path: "/error404",
+        name: "Error404",
+        component: Error404,
     }
 ];
 

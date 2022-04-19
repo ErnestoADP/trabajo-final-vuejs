@@ -64,6 +64,10 @@ export default {
 </script>
 
 <style>
+h1{
+ text-transform: uppercase;
+ 
+}
 h1, .text-manga{color: white;
   text-shadow:
     0 0 7px #fff,
@@ -73,7 +77,12 @@ h1, .text-manga{color: white;
     0 0 82px #bc13fe,
     0 0 92px #bc13fe,
     0 0 102px #bc13fe,
-    0 0 151px #bc13fe;}
+    0 0 151px #bc13fe;
+    }
+
+.text-manga{
+  font-size: 1.4rem;
+}
 
    
 

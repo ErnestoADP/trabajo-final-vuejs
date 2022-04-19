@@ -9,7 +9,7 @@
           icon="facebook"
           scale="2"
           animation="throb"
-        ></b-icon>
+        ><a href="https://www.facebook.com/ernestoandres.diazplaza"></a> </b-icon>
         <b-icon
           class="icon"
           icon="instagram"

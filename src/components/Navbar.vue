@@ -2,7 +2,7 @@
   <div>
     <b-navbar toggleable="lg" type="dark" variant="dark">
       <b-navbar-brand href="#">
-        <img src="../assets/img/LogoPrueba.png" width="200px" alt="Kitten" />
+        <img src="../assets/img/LogoPrueba.png" width="200px" alt="Kitten" class="logo-nav"/>
       </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -52,8 +52,10 @@ export default {
 
 <style scoped>
 .navbar{
-
 border-bottom:1px solid rgb(78, 78, 78);
+}
 
+.logo-nav{
+ 
 }
 </style>
