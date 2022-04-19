@@ -1,5 +1,13 @@
 <template>
   <b-container class="bv-example-row mt-4 card-home">
+    <h1>{{ this.manga.nombre }}</h1>
+    <div class="info">  
+    <p class="text-manga">Descripción: {{ this.manga.descripcion }} </p>
+    <p class="text-manga">Autor: {{ this.manga.autor}} </p>
+    <p class="text-manga">Genero: {{ this.manga.genero }} </p>
+    <p class="text-manga">Editorial: {{ this.manga.editorial}} </p>
+    </div>
+    
     <b-row>
       <b-col
         ><div class="card-parent">
@@ -55,4 +63,18 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+h1, .text-manga{color: white;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #bc13fe,
+    0 0 82px #bc13fe,
+    0 0 92px #bc13fe,
+    0 0 102px #bc13fe,
+    0 0 151px #bc13fe;}
+
+   
+
+</style>

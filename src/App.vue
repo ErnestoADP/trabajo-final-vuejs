@@ -40,23 +40,12 @@ html{
 body{
   margin: 0;
   margin-bottom: 40px;
-   background: linear-gradient(to right, #2e2e2e7c, #9c9c9c9a, #e9e9e9);
-    background-size: 400% 400%;
-    animation: body 10s infinite ease-in-out;
+  
+    background-image: url(https://www.toptal.com/designers/subtlepatterns/uploads/carbon_fibre.png);
 }
 
-@keyframes body {
-  0%{
-     background-position: 0 50%;
-  }
-  50%{
-    background-position: 100% 50%;
-  }
-  100%{
-    background-position: 0 50%;
-  }
+
  
-}
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

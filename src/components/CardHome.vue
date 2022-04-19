@@ -18,16 +18,7 @@
             <b-card-text>
               <h3>{{ item.nombre }}</h3>
             </b-card-text>
-            <hr />
-            <b-card-text> <b>Autor:</b> {{ item.autor }} </b-card-text>
-            <hr />
-            <b-card-text> <b>Editorial:</b> {{ item.editorial }} </b-card-text>
-            <hr />
-            <b-card-text> <b>Genero:</b> {{ item.genero }} </b-card-text>
-            <hr />
-            <b-card-text>
-              <b>Descripción:</b> {{ item.descripcion }}
-            </b-card-text>
+           
             <hr />
             <b-button href="#" class="buttom-card-home" squared variant="outline-dark"  @click="mangaDetalle(item.id)"
               >Ver tomos disponibles</b-button>
@@ -80,7 +71,7 @@ div>.card-interior{
     transition: transform .2s;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 4px;
-    margin:20px;
+    margin:40px;
   
 box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);}
@@ -90,10 +81,22 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 @keyframes pulsate{
   0%{
-    box-shadow: 0 0 25px #ffffff, 0 0 50px #000000;
+     box-shadow:
+     0 0 7px #fff,
+    0 0 10px #fff,
+ 
+    0 0 42px #bc13fe,
+    0 0 82px #bc13fe,
+    0 0 92px #bc13fe,
+    0 0 100px #bc13fe,
+    0 0 121px #bc13fe;
   }
 }
 
+img.card-img-top{
+  width: 100%;
+  height: 450px;
+}
 
 
 

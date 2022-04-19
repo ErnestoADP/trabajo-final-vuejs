@@ -49,3 +49,11 @@ export default {
   },
 };  
 </script>
+
+<style scoped>
+.navbar{
+
+border-bottom:1px solid rgb(78, 78, 78);
+
+}
+</style>

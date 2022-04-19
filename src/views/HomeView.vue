@@ -3,7 +3,7 @@
     <div>
       <!--Carrusel-->
      <Carrusel/> 
-      <h1 class="mt-4">Mangas disponibles</h1>
+      <h1 class="mt-4">MANGAS DISPONIBLES</h1>
     </div>
 
       <CardHome/> 
@@ -33,5 +33,15 @@ export default {
 }
 h1 {
   font-size: 4em;
+ color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #bc13fe,
+    0 0 82px #bc13fe,
+    0 0 92px #bc13fe,
+    0 0 102px #bc13fe,
+    0 0 151px #bc13fe;
 }
 </style>
