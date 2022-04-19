@@ -55,7 +55,5 @@ export default {
 border-bottom:1px solid rgb(78, 78, 78);
 }
 
-.logo-nav{
- 
-}
+
 </style>
