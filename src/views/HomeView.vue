@@ -32,6 +32,7 @@ export default {
   background-color: rgb(31, 31, 31);
 }
 h1 {
+   animation: flicker 1.5s infinite alternate;
   font-size: 4em;
  color: #fff;
   text-shadow:
