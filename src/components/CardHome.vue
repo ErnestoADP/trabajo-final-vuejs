@@ -1,6 +1,7 @@
 <template>
   <!-- Cards Container -->
   <b-container class="bv-example-row mt-4 card-home">
+    
     <b-row>
       <b-col>
         <div class="card-parent">

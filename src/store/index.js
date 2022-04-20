@@ -5,10 +5,13 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-    state: {},
+    state: {
+
+    },
     getters: {},
     mutations: {},
     actions: {
+
         async agregar_Usuario(context, usuario) {
 
             const { email, password } = usuario;
@@ -24,6 +27,7 @@ export default new Vuex.Store({
             const auth = getAuth();
             await signInWithEmailAndPassword(auth, email, password);
             alert("Sesión iniciada con exito!");
+            localStorage.setItem("usuario", JSON.stringify(email));
             return true;
         },
         async cerrar_Sesion(context) {
@@ -33,5 +37,7 @@ export default new Vuex.Store({
 
         }
     },
-    modules: {}
+    modules: {
+
+    }
 })

@@ -5,7 +5,7 @@
      <Carrusel/> 
       <h1 class="mt-4">MANGAS DISPONIBLES</h1>
     </div>
-
+          <input type="" value="" v-on:keyup="buscarProducto($event)">
       <CardHome/> 
 
    
@@ -17,6 +17,7 @@
 import HelloWorld from "@/components/HelloWorld.vue";
 import CardHome from "@/components/CardHome";
 import Carrusel from "@/components/Carrusel"
+import sagasData from "../assets/api/database.json";
 
 export default {
   name: "HomeView",
@@ -24,6 +25,15 @@ export default {
     HelloWorld,
     CardHome,
     Carrusel,
+  },
+  methods:{
+      buscarProducto(event){
+        const busqueda = event.target.value;
+        const resultadoBusqueda = sagasData.sagas.find(item => item.nombre.toLowerCase == busqueda.toLowerCase);
+        
+        
+        console.log(resultadoBusqueda)
+      }
   },
 };
 </script>
