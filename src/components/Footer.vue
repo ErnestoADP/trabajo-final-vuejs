@@ -3,20 +3,21 @@
     <b-container fluid>
       &copy; 2020 Copyright: El Rincón de los virgenes
 
-      <div>
-        <b-icon
+      <div >
+        <b-link class="link" href="https://www.facebook.com/ernestoandres.diazplaza">  <b-icon
           class="icon"
           icon="facebook"
           scale="2"
           animation="throb"
-        ><b-link href="https://www.facebook.com/ernestoandres.diazplaza"></b-link> </b-icon>
-        <b-link href="#foo">Link</b-link>
-        <b-icon
+        > </b-icon></b-link>
+      
+        <b-link class="link" href="https://www.instagram.com/"> <b-icon
           class="icon"
           icon="instagram"
           scale="2"
           animation="throb"
-        ></b-icon>
+        ></b-icon></b-link>
+    
       </div>
     </b-container>
   </div>
@@ -40,5 +41,11 @@
 .icon {
   margin: 15px;
   border-radius: 50%;
+  
+   
+}
+
+.link {
+ text-decoration: none;
 }
 </style>

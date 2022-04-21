@@ -59,6 +59,7 @@ export default {
 <style>
 .card-home {
   padding-bottom: 100px;
+  
 }
 .card-parent {
   display: flex;
@@ -66,19 +67,27 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: space-around;
+  
+  
 }
 .card-body {
+  
   background-color: rgb(236, 236, 236);
+ 
 }
 div > .card-interior {
+  width: 100%;
   transition: transform 0.2s;
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 4px;
   margin: 40px;
 
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+ 
 }
+
+
 .card-interior:hover {
   animation: pulsate 1s ease-in-out;
 }
@@ -92,5 +101,10 @@ div > .card-interior {
 img.card-img-top {
   width: 100%;
   height: 450px;
+}
+
+.buttom-card-home
+{
+  
 }
 </style>
