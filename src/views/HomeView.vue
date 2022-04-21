@@ -2,13 +2,11 @@
   <div class="home">
     <div>
       <!--Carrusel-->
-     <Carrusel/> 
+      <Carrusel />
       <h1 class="mt-4">MANGAS DISPONIBLES</h1>
     </div>
-          <input type="" value="" v-on:keyup="buscarProducto($event)">
-      <CardHome/> 
-
    
+    <CardHome />
   </div>
 </template>
 
@@ -16,7 +14,7 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 import CardHome from "@/components/CardHome";
-import Carrusel from "@/components/Carrusel"
+import Carrusel from "@/components/Carrusel";
 import sagasData from "../assets/api/database.json";
 
 export default {
@@ -26,33 +24,20 @@ export default {
     CardHome,
     Carrusel,
   },
-  methods:{
-      buscarProducto(event){
-        const busqueda = event.target.value;
-        const resultadoBusqueda = sagasData.sagas.find(item => item.nombre.toLowerCase == busqueda.toLowerCase);
-        
-        
-        console.log(resultadoBusqueda)
-      }
+  methods: {
+
   },
 };
 </script>
-  <style scoped>
+<style scoped>
 .logo {
   background-color: rgb(31, 31, 31);
 }
 h1 {
-   animation: flicker 1.5s infinite alternate;
+  animation: flicker 1.5s infinite alternate;
   font-size: 4em;
- color: #fff;
-  text-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px #bc13fe,
-    0 0 82px #bc13fe,
-    0 0 92px #bc13fe,
-    0 0 102px #bc13fe,
-    0 0 151px #bc13fe;
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe,
+    0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
 }
 </style>

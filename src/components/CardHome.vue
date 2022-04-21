@@ -1,12 +1,13 @@
 <template>
   <!-- Cards Container -->
   <b-container class="bv-example-row mt-4 card-home">
-    
+    <input type="" value="" v-model="search" />
+    <p v-show="mostrarMensaje">No se encontro el resultado</p>
     <b-row>
       <b-col>
         <div class="card-parent">
           <b-card
-            v-for="item in this.coleccion.sagas"
+            v-for="item in filteredProducts"
             :key="item.id"
             title=""
             :img-src="item.image"
@@ -30,6 +31,7 @@
               >Ver tomos disponibles</b-button
             >
           </b-card>
+          
         </div></b-col
       >
     </b-row>
@@ -42,6 +44,8 @@ import sagasData from "../assets/api/database.json";
 export default {
   data() {
     return {
+      mostrarMensaje: false,
+      search: "",
       coleccion: sagasData,
     };
   },
@@ -50,16 +54,30 @@ export default {
       this.$router.push({ path: "/manga/" + id });
     },
   },
-  mounted() {
-    // console.log(this.coleccion.sagas);
+  computed: {
+    filteredProducts() {
+      const resultados = this.coleccion.sagas.filter((item) =>
+        item.nombre.toLowerCase().includes(this.search)
+      );
+     
+        if (resultados.length === 0){
+           this.mostrarMensaje = true;
+
+        }else{
+           this.mostrarMensaje = false;
+          return resultados;
+
+        }
+
+    },
   },
+  mounted() {},
 };
 </script>
 
 <style>
 .card-home {
   padding-bottom: 100px;
-  
 }
 .card-parent {
   display: flex;
@@ -67,13 +85,9 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: space-around;
-  
-  
 }
 .card-body {
-  
   background-color: rgb(236, 236, 236);
- 
 }
 div > .card-interior {
   width: 100%;
@@ -84,9 +98,7 @@ div > .card-interior {
 
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
- 
 }
-
 
 .card-interior:hover {
   animation: pulsate 1s ease-in-out;
@@ -101,10 +113,5 @@ div > .card-interior {
 img.card-img-top {
   width: 100%;
   height: 450px;
-}
-
-.buttom-card-home
-{
-  
 }
 </style>
