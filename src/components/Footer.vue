@@ -47,5 +47,6 @@
 
 .link {
  text-decoration: none;
+ color: white;
 }
 </style>

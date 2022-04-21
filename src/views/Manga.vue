@@ -31,7 +31,7 @@
             <b-card-text> <b>Stock:</b> {{ tomo.stock }} </b-card-text>
             <hr />
 
-            <b-button href="#" variant="outline-success">Agregar al Carrito</b-button>
+            <b-button href="#"  @click="agregarCarrito(tomo)" variant="outline-success">Agregar al Carrito</b-button>
           </b-card>
         </div></b-col
       >
@@ -46,7 +46,8 @@ export default {
   name: "Manga",
   data() {
     return {
-      manga: {}
+      manga: {},
+      tomosAgregados: [],
     };
   },
   mounted() {
@@ -59,7 +60,17 @@ export default {
 
     // obtener solo un item de la coleccion por la id 
     this.manga = coleccion.find((item) => item.id == id);
+
   },
+
+  methods: {
+    agregarCarrito(tomo){
+        this.tomosAgregados.push(tomo);
+        const contador = this.tomosAgregados.length;
+        console.log(contador);
+    }
+  }
+
 };
 </script>
 
