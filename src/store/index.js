@@ -6,10 +6,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-
+        userLogin: null,
     },
     getters: {},
-    mutations: {},
+    mutations: {
+        SET_USER_LOGIN(state, payload) {
+            state.userLogin = payload;
+        },
+    },
+
     actions: {
 
         async agregar_Usuario(context, usuario) {
@@ -30,12 +35,21 @@ export default new Vuex.Store({
             localStorage.setItem("usuario", JSON.stringify(email));
             return true;
         },
-        async cerrar_Sesion(context) {
-            const auth = getAuth();
-            await signOut(auth);
-            alert("Sesión cerrada!");
-
-        }
+        getUserLogin({ commit }) {
+            getAuth().onAuthStateChanged((user) => {
+                if (user) {
+                    commit("SET_USER_LOGIN", user.email);
+                }
+            });
+        },
+        async cerrar_Sesion({ commit }) {
+            await getAuth()
+                .signOut()
+                .then(() => {
+                    alert("Sesión cerrada!")
+                    commit('SET_USER_LOGIN', null);
+                });
+        },
     },
     modules: {
 
