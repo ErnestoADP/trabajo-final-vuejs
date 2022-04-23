@@ -1,8 +1,18 @@
 <template>
   <!-- Cards Container -->
   <b-container class="bv-example-row mt-4 card-home">
-    <input type="" value="" v-model="search" />
-    <p v-show="mostrarMensaje">No se encontro el resultado</p>
+    <div class="inputSearch">
+       <b-input-group size="sm" class="mb-2">
+      <b-input-group-prepend is-text>
+        <b-icon icon="search"></b-icon>
+      </b-input-group-prepend>
+      <b-form-input v-model="search" type="search" placeholder="Busca tu manga aquí"></b-form-input>
+    </b-input-group>
+    </div>
+    
+    
+    
+    <p class="mensajeNoEncontrado" v-show="mostrarMensaje">No se encontro el resultado</p>
     <b-row>
       <b-col>
         <div class="card-parent">
@@ -26,7 +36,7 @@
               href="#"
               class="buttom-card-home"
               squared
-              variant="outline-dark"
+              variant="outline-success"
               @click="mangaDetalle(item.id)"
               >Ver tomos disponibles</b-button
             >
@@ -86,32 +96,65 @@ export default {
   justify-content: space-around;
   align-content: space-around;
 }
-.card-body {
-  background-color: rgb(236, 236, 236);
-}
+
 div > .card-interior {
   width: 100%;
-  transition: transform 0.2s;
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 4px;
+ background-color: rgba(0, 0, 0, 0.567);
+ color:white;
+  border: 5px solid;
+  border-image: linear-gradient(
+    #2fff32,
+    #fcfa4d,
+    #0243cf) 1;
+  animation: rotate 2.5s
+   ease-in
+  infinite;
+  
   margin: 40px;
 
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
 }
 
-.card-interior:hover {
-  animation: pulsate 1s ease-in-out;
-}
-@keyframes pulsate {
-  0% {
-    box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px #bc13fe, 0 0 82px #bc13fe,
-      0 0 92px #bc13fe, 0 0 100px #bc13fe, 0 0 121px #bc13fe;
+@keyframes rotate {
+  50%{
+      border-image: 
+      linear-gradient(
+        360deg,
+     #2fff32,
+    #fcfa4d,
+    #0243cf) 1;
   }
 }
+
+
 
 img.card-img-top {
   width: 100%;
   height: 450px;
+ border-radius:0;
 }
+.card-img,.card-img-top{
+ 
+}
+
+.mensajeNoEncontrado{
+  animation: flicker 1.5s infinite alternate;
+  font-size: 4em;
+  color: #fff;
+  text-shadow: 0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa;
+}
+.inputSearch{
+  width: 56%;
+  margin: auto;
+  
+}
+
+
 </style>

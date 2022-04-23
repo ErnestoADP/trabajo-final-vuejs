@@ -1,12 +1,12 @@
 <template>
-       <div>
+       <div class="carrusel">
         <b-carousel
           id="carousel-fade"
           style="text-shadow: 0px 0px 2px #000"
           fade
           indicators
           img-width="100%"
-          img-height="200px"
+          img-height="100px"
         >
           <b-carousel-slide
             caption="Jujutsu Kaisen"
@@ -26,3 +26,17 @@
         </b-carousel>
       </div>
 </template>
+
+<style>
+.img-fluid {
+    max-width: 100%;
+    height: 650px!important;
+}
+
+@media only screen and (max-width: 600px) {
+  .img-fluid {
+   
+    height: auto!important;;
+}
+}
+</style>
