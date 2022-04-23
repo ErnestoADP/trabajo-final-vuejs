@@ -27,8 +27,8 @@
             >
           </div>
           <div v-else>
-            <b-button to="/Registrate" variant="primary" style="margin-right: 15px;">Regístrate</b-button>
-            <b-button @click="ingresar" variant="success"
+            <b-button to="/Registrate" variant="outline-primary" style="margin-right: 15px;">Regístrate</b-button>
+            <b-button @click="ingresar" variant="outline-success"
               >Inicia sesión</b-button
             >
           </div>
