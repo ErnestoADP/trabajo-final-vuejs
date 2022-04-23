@@ -26,12 +26,15 @@
             tag="article"
             style="max-width: 20rem"
             class="mb-2 card-interior img-body-card"
+            @click="mangaDetalle(item.id)"
+           
           >
-            <b-card-text>
-              <h3>{{ item.nombre }}</h3>
-            </b-card-text>
+           <!-- <b-card-text>
+           <h3>{{ item.nombre }}</h3>
+            </b-card-text>--> 
+           
 
-            <hr />
+           
             <b-button
               href="#"
               class="buttom-card-home"
