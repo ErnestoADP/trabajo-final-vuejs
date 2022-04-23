@@ -133,9 +133,6 @@ img.card-img-top {
   height: 450px;
  border-radius:0;
 }
-.card-img,.card-img-top{
- 
-}
 
 .mensajeNoEncontrado{
   animation: flicker 1.5s infinite alternate;
