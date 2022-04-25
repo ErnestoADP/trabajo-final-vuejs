@@ -29,9 +29,9 @@
             @click="mangaDetalle(item.id)"
            
           >
-           <!-- <b-card-text>
+           <b-card-text class="titulo">
            <h3>{{ item.nombre }}</h3>
-            </b-card-text>--> 
+            </b-card-text>
            
 
            
@@ -154,6 +154,10 @@ img.card-img-top {
   width: 56%;
   margin: auto;
   
+}
+
+.titulo{
+  display:none;
 }
 
 
