@@ -23,13 +23,13 @@
                 <b-card :img-src="item.imagen" fluid alt="Fluid image"></b-card>
               </div>
             </td>
-            <td>
+            <td class="second-col">
               <div>
                 <h5>{{ item.precio }}</h5>
               </div>
             </td>
 
-            <td>
+            <td class="third-col">
               <!----ELIMINAR------>
               <b-button
                 class="buttons-table"
@@ -39,26 +39,13 @@
                 ><b-icon icon="trash" scale="1" variant="light"></b-icon
               ></b-button>
             </td>
-            <td></td>
           </tr>
         </tbody>
       </table>
 
       <div class="total"></div>
     </section>
-    <div class="mt-5">
-      <b-container class="bv-example-row">
-        <b-row>
-          <b-col></b-col>
-          <b-col></b-col>
-          <b-col><h3 class="total">Total Compra:</h3></b-col>
-          <b-col class="me-5"
-            ><h3>$7.990</h3>
-            <b-button variant="danger">Comprar</b-button>
-          </b-col>
-        </b-row>
-      </b-container>
-    </div>
+  
   </div>
 </template>
 <script>
@@ -72,11 +59,14 @@ export default {
   },
   methods: {
     eliminarProducto(id) {
-      const productos = this.productosSeleccionados; 
+      const productos = this.productosSeleccionados;
       this.productosSeleccionados = [];
-      this.productosSeleccionados = productos.filter((e) => e.numero != id); 
+      this.productosSeleccionados = productos.filter((e) => e.numero != id);
 
-      localStorage.setItem('carrito', JSON.stringify(this.productosSeleccionados));
+      localStorage.setItem(
+        "carrito",
+        JSON.stringify(this.productosSeleccionados)
+      );
     },
   },
   mounted() {
@@ -113,13 +103,25 @@ p {
 .cuerpo {
   width: 70%;
   margin: auto;
+  
 }
 .tabla {
-  width: 100%;
+  width: 50%;
+   margin: auto;
+   margin-bottom: 150px;
+   border: 2px solid #fff;
+  
+}
+div.card-body{
+ display: none;
 }
 .first-col {
   width: 20%;
 }
+.second-col,.third-col{
+  width: 10%;
+}
+
 .texto {
   text-align: center;
 }
@@ -127,14 +129,16 @@ p {
   margin: 0.1rem;
 }
 table {
-  border: 2px solid rgb(0, 0, 0);
-  box-shadow: 0px 5px 10px #aaaaaa;
   margin: 0.4rem;
+ 
 }
 th,
 td {
   padding: 4px 1px 3px 1px;
   border-bottom: 1px solid;
   box-shadow: 0px 1px 0px #000000;
+  color: #fff;
+   border: 2px solid #fff;
 }
+
 </style>

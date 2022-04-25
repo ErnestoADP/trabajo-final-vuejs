@@ -1,19 +1,19 @@
 <template>
   <b-container class="bv-example-row mt-4 card-home">
     <h1>{{ this.manga.nombre }}</h1>
-    <div class="info">  
-    <p class="text-manga">Descripción: {{ this.manga.descripcion }} </p>
-    <p class="text-manga">Autor: {{ this.manga.autor}} </p>
-    <p class="text-manga">Genero: {{ this.manga.genero }} </p>
-    <p class="text-manga">Editorial: {{ this.manga.editorial}} </p>
+    <div class="info">
+      <p class="text-manga">Descripción: {{ this.manga.descripcion }}</p>
+      <p class="text-manga">Autor: {{ this.manga.autor }}</p>
+      <p class="text-manga">Genero: {{ this.manga.genero }}</p>
+      <p class="text-manga">Editorial: {{ this.manga.editorial }}</p>
     </div>
-    
+
     <b-row>
       <b-col
         ><div class="card-parent">
-          <b-card  v-for="tomo in this.manga.tomos"
+          <b-card
+            v-for="tomo in this.manga.tomos"
             :key="tomo.id"
-            
             :img-src="tomo.imagen"
             img-alt="Image"
             img-top
@@ -21,7 +21,6 @@
             style="max-width: 15rem"
             class="mb-2 card-interior"
           >
-          
             <b-card-text>
               <h3>Numero: {{ tomo.numero }}</h3>
             </b-card-text>
@@ -31,7 +30,12 @@
             <b-card-text> <b>Stock:</b> {{ tomo.stock }} </b-card-text>
             <hr />
 
-            <b-button href="#"  @click="agregarCarrito(tomo)" variant="outline-success">Agregar al Carrito</b-button>
+            <b-button
+              href="#"
+              @click="agregarCarrito(tomo)"
+              variant="outline-success"
+              >Agregar al Carrito</b-button
+            >
           </b-card>
         </div></b-col
       >
@@ -51,52 +55,39 @@ export default {
     };
   },
   mounted() {
-
     // obtener id desde la ruta
     let id = this.$route.params.id;
 
-    // poner coleccion de mangas en una variable 
+    // poner coleccion de mangas en una variable
     let coleccion = sagasData.sagas;
 
-    // obtener solo un item de la coleccion por la id 
+    // obtener solo un item de la coleccion por la id
     this.manga = coleccion.find((item) => item.id == id);
-
   },
 
   methods: {
-    agregarCarrito(tomo){
-        this.tomosAgregados.push(tomo);
-        const contador = this.tomosAgregados.length;
-       
-       this.$store.commit('SET_CARRITO', this.tomosAgregados);
-       localStorage.setItem('carrito', JSON.stringify(this.tomosAgregados));
-    }
-  }
+    agregarCarrito(tomo) {
+      this.tomosAgregados.push(tomo);
+      const contador = this.tomosAgregados.length;
 
+      this.$store.commit("SET_CARRITO", this.tomosAgregados);
+      localStorage.setItem("carrito", JSON.stringify(this.tomosAgregados));
+    },
+  },
 };
 </script>
 
 <style>
-h1{
- text-transform: uppercase;
- 
+h1 {
+  text-transform: uppercase;
 }
-h1, .text-manga{color: white;
-  text-shadow:
-  0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 21px #fff,
-      0 0 42px #0fa,
-      0 0 82px #0fa,
-      0 0 92px #0fa,
-      0 0 102px #0fa,
-      0 0 151px #0fa;
-    }
+h1,
+.text-manga {
+  color: white;
+  text-shadow: 0 0 7px #fff, 0 0 42px #0fa, 0 0 92px #0fa, 0 0 151px #0fa;
+}
 
-.text-manga{
+.text-manga {
   font-size: 1.4rem;
 }
-
-   
-
 </style>
