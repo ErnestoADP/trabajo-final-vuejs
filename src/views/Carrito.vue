@@ -17,34 +17,17 @@
         </thead>
 
         <tbody>
-          <tr>
-            <td>
+          <tr v-for="item in productosSeleccionados" :key="item.id">
+            <td class="first-col">
               <div class="m-2">
-                <h5>One Piece Tomo 12</h5>
-                <b-img
-                  src="https://i0.wp.com/www.gamerfocus.co/wp-content/uploads/2020/08/One-Piece-0.jpg?resize=640%2C1024&ssl=1"
-                  width="100em"
-                  fluid
-                  alt="Responsive image"
-                ></b-img>
+                <b-card :img-src="item.imagen" fluid alt="Fluid image"></b-card>
               </div>
             </td>
             <td>
               <div>
-                <b-form-spinbutton
-                  id="sb-inline"
-                  v-model="value"
-                  inline
-                ></b-form-spinbutton>
+                <h5>{{ item.precio }}</h5>
               </div>
             </td>
-
-            <td>
-              <div>
-                <h5>$7.990</h5>
-              </div>
-            </td>
-            <td></td>
 
             <td>
               <!----ELIMINAR------>
@@ -80,34 +63,15 @@ export default {
 
   data() {
     return {
-      curso: {
-        nombreCurso: "",
-        urlImg: "",
-        cuposDelCurso: "",
-        inscritosEnElCurso: "",
-        duracionDelCurso: "",
-        codigoDelCurso: "",
-        descripcion: "",
-      },
-      cursoSeleccionado: {
-        id: "",
-        data: {
-          nombreCurso: "",
-          urlImg: "",
-          cuposDelCurso: "",
-          inscritosEnElCurso: "",
-          duracionDelCurso: "",
-          codigoDelCurso: "",
-          descripcion: "",
-        },
-      },
+      productosSeleccionados: {},
     };
+  },
+  mounted() {
+    this.productosSeleccionados = this.$store.state.productosCarrito;
+    console.log(this.productosSeleccionados);
   },
 };
 </script>
-
-
-
 
 <style scoped>
 p {
@@ -136,6 +100,9 @@ p {
 }
 .tabla {
   width: 100%;
+}
+.first-col {
+  width: 20%;
 }
 .texto {
   text-align: center;

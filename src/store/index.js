@@ -7,12 +7,16 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         userLogin: null,
+        productosCarrito: null
     },
     getters: {},
     mutations: {
         SET_USER_LOGIN(state, payload) {
             state.userLogin = payload;
         },
+        SET_CARRITO(state, payload) {
+            state.productosCarrito = payload;
+        }
     },
 
     actions: {

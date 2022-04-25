@@ -67,7 +67,8 @@ export default {
     agregarCarrito(tomo){
         this.tomosAgregados.push(tomo);
         const contador = this.tomosAgregados.length;
-        console.log(contador);
+       
+       this.$store.commit('SET_CARRITO', this.tomosAgregados);
     }
   }
 
