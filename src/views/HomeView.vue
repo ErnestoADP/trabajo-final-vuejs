@@ -46,4 +46,10 @@ h1 {
       0 0 102px #0fa,
       0 0 151px #0fa;
 }
+@media only screen and (max-width: 600px) {
+  .mt-4 {
+   
+    font-size: 30px;
+}
+}
 </style>
