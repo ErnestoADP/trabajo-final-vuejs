@@ -69,6 +69,7 @@ export default {
         const contador = this.tomosAgregados.length;
        
        this.$store.commit('SET_CARRITO', this.tomosAgregados);
+       localStorage.setItem('carrito', JSON.stringify(this.tomosAgregados));
     }
   }
 

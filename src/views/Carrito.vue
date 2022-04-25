@@ -31,7 +31,11 @@
 
             <td>
               <!----ELIMINAR------>
-              <b-button class="buttons-table" squared variant="danger"
+              <b-button
+                class="buttons-table"
+                @click="eliminarProducto(item.numero)"
+                squared
+                variant="danger"
                 ><b-icon icon="trash" scale="1" variant="light"></b-icon
               ></b-button>
             </td>
@@ -66,9 +70,21 @@ export default {
       productosSeleccionados: {},
     };
   },
+  methods: {
+    eliminarProducto(id) {
+      const productos = this.productosSeleccionados; 
+      this.productosSeleccionados = [];
+      this.productosSeleccionados = productos.filter((e) => e.numero != id); 
+
+      localStorage.setItem('carrito', JSON.stringify(this.productosSeleccionados));
+    },
+  },
   mounted() {
     this.productosSeleccionados = this.$store.state.productosCarrito;
-    console.log(this.productosSeleccionados);
+
+    if (!this.productosSeleccionados) {
+      this.productosSeleccionados = JSON.parse(localStorage.getItem("carrito"));
+    }
   },
 };
 </script>
