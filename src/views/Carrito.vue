@@ -7,6 +7,8 @@
     </div>
     <!--------------------------------------------------------TABLA CON LOS DATOS------------------------------------------------------------------------------->
     <section>
+      <p class="total">{{ sumaPrecio }}</p>
+      <b-button @click="pagar(sumaPrecio)">Pagar</b-button>
       <table class="tabla">
         <thead>
           <tr>
@@ -42,10 +44,7 @@
           </tr>
         </tbody>
       </table>
-
-      <div class="total"></div>
     </section>
-  
   </div>
 </template>
 <script>
@@ -55,6 +54,7 @@ export default {
   data() {
     return {
       productosSeleccionados: {},
+      sumaPrecio: 0,
     };
   },
   methods: {
@@ -68,13 +68,17 @@ export default {
         JSON.stringify(this.productosSeleccionados)
       );
     },
+    pagar(monto){
+      console.log(monto);
+    }
   },
   mounted() {
-    this.productosSeleccionados = this.$store.state.productosCarrito;
+    this.sumaPrecio = 0;
+    this.productosSeleccionados = JSON.parse(localStorage.getItem("carrito"));
 
-    if (!this.productosSeleccionados) {
-      this.productosSeleccionados = JSON.parse(localStorage.getItem("carrito"));
-    }
+    this.productosSeleccionados.forEach((element) => {
+      this.sumaPrecio += element.precio;
+    });
   },
 };
 </script>
@@ -103,22 +107,21 @@ p {
 .cuerpo {
   width: 70%;
   margin: auto;
-  
 }
 .tabla {
   width: 50%;
-   margin: auto;
-   margin-bottom: 150px;
-   border: 2px solid #fff;
-  
+  margin: auto;
+  margin-bottom: 150px;
+  border: 2px solid #fff;
 }
-div.card-body{
- display: none;
+div.card-body {
+  display: none;
 }
 .first-col {
   width: 20%;
 }
-.second-col,.third-col{
+.second-col,
+.third-col {
   width: 10%;
 }
 
@@ -130,7 +133,6 @@ div.card-body{
 }
 table {
   margin: 0.4rem;
- 
 }
 th,
 td {
@@ -138,7 +140,6 @@ td {
   border-bottom: 1px solid;
   box-shadow: 0px 1px 0px #000000;
   color: #fff;
-   border: 2px solid #fff;
+  border: 2px solid #fff;
 }
-
 </style>

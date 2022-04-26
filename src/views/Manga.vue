@@ -67,11 +67,18 @@ export default {
 
   methods: {
     agregarCarrito(tomo) {
-      this.tomosAgregados.push(tomo);
-      const contador = this.tomosAgregados.length;
+      const tomosAgregados = [];
+      const carrito = JSON.parse(localStorage.getItem("carrito"));
 
-      this.$store.commit("SET_CARRITO", this.tomosAgregados);
-      localStorage.setItem("carrito", JSON.stringify(this.tomosAgregados));
+      if (carrito === null || carrito.length === 0) {
+        tomosAgregados.push(tomo);
+        localStorage.setItem("carrito", JSON.stringify(tomosAgregados));
+      } else {
+
+        debugger;
+        carrito.push(tomo); 
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+      }
     },
   },
 };
