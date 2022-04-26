@@ -70,7 +70,7 @@ export default {
   computed: {
     filteredProducts() {
       const resultados = this.coleccion.sagas.filter((item) =>
-        item.nombre.toLowerCase().includes(this.search)
+        item.nombre.toLowerCase().includes(this.search.toLowerCase())
       );
      
         if (resultados.length === 0){
