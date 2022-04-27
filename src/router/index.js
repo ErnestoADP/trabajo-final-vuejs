@@ -9,6 +9,8 @@ import Login from "../views/Login.vue";
 import Manga from "../views/Manga.vue";
 import Usuario from "../views/Usuario.vue";
 import Error404 from "../views/Error404.vue";
+import Entrega from "../views/Entrega.vue";
+import Pago_exitoso from "../views/Pago_exitoso.vue";
 
 
 
@@ -60,6 +62,14 @@ const routes = [{
         path: '*',
         name: "Error404",
         component: Error404,
+    }, {
+        path: "/entrega",
+        name: "Entrega",
+        component: Entrega,
+    }, {
+        path: "/pago_exitoso",
+        name: "Pago_exitoso",
+        component: Pago_exitoso,
     }
 ];
 

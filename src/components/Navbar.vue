@@ -22,9 +22,15 @@
             <span style="color: #fff; margin-right: 15px"
               >Hola, {{ userLogin }}</span
             >
+             
             <b-button @click="cerrarSesion" variant="outline-primary"
               >Cerrar sesión</b-button
             >
+            <b-button class="btn-perfil" to="/Usuario"  variant="outline-success"
+              > <b-icon to="/Usuario" icon="person-fill" scale="2" variant="outline-success"></b-icon></b-button
+            >
+           
+            
           </div>
           <div v-else>
             <b-button to="/Registrate" variant="outline-primary" style="margin-right: 15px;">Regístrate</b-button>
@@ -62,6 +68,10 @@ export default {
 <style scoped>
 .navbar{
 border-bottom:1px solid rgb(78, 78, 78);
+}
+
+.btn-perfil{
+  margin-left: 5px;;
 }
 
 
