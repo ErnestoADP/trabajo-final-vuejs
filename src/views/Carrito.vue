@@ -7,8 +7,13 @@
     </div>
     <!--------------------------------------------------------TABLA CON LOS DATOS------------------------------------------------------------------------------->
     <section>
-      <p class="total">${{ sumaPrecio }}</p>
-      <b-button to="/Entrega" @click="pagar(sumaPrecio)">Pagar</b-button>
+      <div class="header-carrito">
+        <p class="total">${{ sumaPrecio }}</p>
+        <b-button to="/Entrega" @click="pagar(sumaPrecio)">Pagar</b-button>
+      </div>
+
+   
+
       <table class="tabla">
         <thead>
           <tr>
@@ -148,5 +153,24 @@ td {
   box-shadow: 0px 1px 0px #000000;
   color: #fff;
   border: 2px solid #fff;
+}
+
+/** Custom */
+.header-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+.header-carrito p {
+  margin: 0;
+  color: #5c636a;
+  background-color: #eee;
+}
+
+.header-carrito a {
+  margin: 0;
+  padding: 1.2em;
 }
 </style>
