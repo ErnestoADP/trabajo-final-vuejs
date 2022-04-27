@@ -12,8 +12,6 @@
         <b-button to="/Entrega" @click="pagar(sumaPrecio)">Pagar</b-button>
       </div>
 
-   
-
       <table class="tabla">
         <thead>
           <tr>
@@ -64,12 +62,11 @@ export default {
   },
   methods: {
     eliminarProducto(id) {
-      const productos = this.productosSeleccionados;
+      const itemOnLocal = JSON.parse(localStorage.getItem("carrito"));
 
-      this.suma = 0;
+      this.sumaPrecio = 0;
       this.productosSeleccionados = [];
-
-      this.productosSeleccionados = productos.filter((e) => e.numero != id);
+      this.productosSeleccionados = itemOnLocal.filter((e) => e.numero != id);
 
       localStorage.setItem(
         "carrito",
@@ -77,7 +74,7 @@ export default {
       );
 
       this.productosSeleccionados.forEach((element) => {
-        this.sumaPrecio -= element.precio;
+        this.sumaPrecio += element.precio;
       });
     },
     pagar(monto) {
