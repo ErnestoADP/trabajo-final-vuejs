@@ -8,7 +8,7 @@
     <!--------------------------------------------------------TABLA CON LOS DATOS------------------------------------------------------------------------------->
     <section>
       <p class="total">{{ sumaPrecio }}</p>
-      <b-button @click="pagar(sumaPrecio)">Pagar</b-button>
+      <b-button to="/Entrega" @click="pagar(sumaPrecio)">Pagar</b-button>
       <table class="tabla">
         <thead>
           <tr>

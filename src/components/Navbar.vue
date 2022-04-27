@@ -3,7 +3,7 @@
   <div>
     <b-navbar toggleable="lg" type="dark" variant="dark">
       <b-navbar-brand href="#">
-        <img src="../assets/img/LogoPrueba.png" width="200px" alt="Kitten" />
+        <img to="/" src="../assets/img/LogoPrueba.png" width="200px" alt="Kitten" />
       </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -62,12 +62,23 @@ export default {
   },
   computed: {
     ...mapState(["userLogin"]),
+
+ //   carritoTotal: function(){
+   //   let suma = 0;
+    //  for (key in this.data){
+    //    suma = suma+(this.data[key].id.data* this.data[key].id);
+    //  }
+  //    return suma
+   // },
   },
+
+  
 };
 </script>
 <style scoped>
 .navbar{
 border-bottom:1px solid rgb(78, 78, 78);
+
 }
 
 .btn-perfil{

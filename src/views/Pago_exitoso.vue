@@ -1,5 +1,6 @@
 <template>
-  <b-container>
+<div class="pagos">
+   <b-container>
     <b-row class="my-1 mt-4" style="background: white; border-radius: 10px">
       <b-col col lg="4" md="12" class="cuadro1">
         <h2>Lo que compraste</h2>
@@ -30,6 +31,8 @@
       </b-col>
     </b-row>
   </b-container>
+</div>
+ 
 </template>
 
 <style>
@@ -44,5 +47,10 @@
 .cuadro2 {
   padding: 50px;
   border-radius: 10px 0 0 10px;
+  background-color:rgba(0, 0, 0, 0.439);
+}
+
+.pagos {
+    margin-bottom: 280px;
 }
 </style>

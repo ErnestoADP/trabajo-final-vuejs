@@ -1,5 +1,7 @@
 <template>
-  <b-container>
+
+<div class="entrega">
+   <b-container>
     <h1 class="mt-4 bv-example-row" style="text-align: left">
       Información de entrega
     </h1>
@@ -62,9 +64,12 @@
       <b-col cols lg="8" md="12"> </b-col>
     </b-row>
     <div style="float: left">
-      <b-button variant="success" class="mt-4">Hacer pedido</b-button>
+      <b-button to="/Pago_exitoso" variant="outline-success" class="mt-4">Hacer pedido</b-button>
     </div>
   </b-container>
+
+</div>
+ 
 </template>
 
 <style>
@@ -79,5 +84,9 @@
 .cuadro2 {
   padding: 50px;
   border-radius: 10px 0 0 10px;
+}
+
+.entrega {
+  margin-bottom: 280px;
 }
 </style>
