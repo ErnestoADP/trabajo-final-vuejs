@@ -5,9 +5,17 @@
         <b-col col lg="4" md="12" class="cuadro1">
           <h2>Lo que compraste</h2>
           <hr />
-          <div v-for="item in productosComprados" :key="item.id">
-            <p>Numero: {{ item.numero }}</p>
+          <div class="card-venta-padre">
+            <div
+            class="div-venta"
+            v-for="item in productosComprados"
+            :key="item.id"
+          >
+            <p >Tomo: {{ item.numero }}</p>
+            <b-card class="card-venta" :img-src="item.imagen"></b-card>
           </div>
+          </div>
+          
 
           <hr />
           <div style="display: flex">
@@ -67,5 +75,24 @@ export default {
 
 .pagos {
   margin-bottom: 280px;
+}
+.card-venta-padre{
+  display: flex;
+  flex-wrap: wrap;
+}
+.card-venta-padre p{
+  margin: 1em 0;
+}
+
+.div-venta  {
+ width:30%;
+margin: auto;
+
+}
+.div-venta img{
+  width:100%;
+}
+.card-venta .card-body{
+  display: none;
 }
 </style>
