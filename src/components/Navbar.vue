@@ -68,12 +68,10 @@ export default {
   },
   mounted() {
     this.getUserLogin();
-    const carrito = JSON.parse(localStorage.getItem("carrito"));
-
-    this.mostrarCountCarrito = carrito.length !== 0 ? true : false;
-    this.countCarrito = carrito.length;
+    // this.countCarrito = this.$store.getters.carritoCount;
+    this.countCarrito = JSON.parse(localStorage.getItem('carrito')).length;
   },
-  
+
   methods: {
     ...mapActions(["getUserLogin", "cerrar_Sesion"]),
     cerrarSesion() {

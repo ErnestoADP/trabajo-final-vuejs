@@ -7,22 +7,23 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         userLogin: null,
-        productosCarrito: null
+        cantidadProductosCarrito: null
     },
-    getters: {},
+    getters: {
+        carritoCount(state) {
+            return (state.cantidadProductosCarrito) ? state.cantidadProductosCarrito.length : 0;
+        }
+    },
     mutations: {
         SET_USER_LOGIN(state, payload) {
             state.userLogin = payload;
         },
-        SET_CARRITO(state, payload) {
-            state.productosCarrito = payload;
+        SET_CANTIDAD_CARRITO(state, payload) {
+            state.cantidadProductosCarrito = payload;
         }
     },
-
     actions: {
-
         async agregar_Usuario(context, usuario) {
-
             const { email, password } = usuario;
             const auth = getAuth();
             await createUserWithEmailAndPassword(auth, email, password);
@@ -31,7 +32,6 @@ export default new Vuex.Store({
         },
 
         async iniciar_Sesion(context, usuario) {
-
             const { email, password } = usuario;
             const auth = getAuth();
             await signInWithEmailAndPassword(auth, email, password);
@@ -55,7 +55,5 @@ export default new Vuex.Store({
                 });
         },
     },
-    modules: {
-
-    }
+    modules: {}
 })

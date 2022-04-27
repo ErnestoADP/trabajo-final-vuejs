@@ -74,11 +74,11 @@ export default {
         tomosAgregados.push(tomo);
         localStorage.setItem("carrito", JSON.stringify(tomosAgregados));
       } else {
-
-        debugger;
-        carrito.push(tomo); 
+        carrito.push(tomo);
         localStorage.setItem("carrito", JSON.stringify(carrito));
       }
+
+      this.$store.commit('SET_CANTIDAD_CARRITO', carrito.length);
     },
   },
 };

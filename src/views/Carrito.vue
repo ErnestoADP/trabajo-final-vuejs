@@ -7,7 +7,7 @@
     </div>
     <!--------------------------------------------------------TABLA CON LOS DATOS------------------------------------------------------------------------------->
     <section>
-      <p class="total">{{ sumaPrecio }}</p>
+      <p class="total">${{ sumaPrecio }}</p>
       <b-button to="/Entrega" @click="pagar(sumaPrecio)">Pagar</b-button>
       <table class="tabla">
         <thead>
@@ -60,17 +60,24 @@ export default {
   methods: {
     eliminarProducto(id) {
       const productos = this.productosSeleccionados;
+
+      this.suma = 0;
       this.productosSeleccionados = [];
+
       this.productosSeleccionados = productos.filter((e) => e.numero != id);
 
       localStorage.setItem(
         "carrito",
         JSON.stringify(this.productosSeleccionados)
       );
+
+      this.productosSeleccionados.forEach((element) => {
+        this.sumaPrecio -= element.precio;
+      });
     },
-    pagar(monto){
+    pagar(monto) {
       console.log(monto);
-    }
+    },
   },
   mounted() {
     this.sumaPrecio = 0;
