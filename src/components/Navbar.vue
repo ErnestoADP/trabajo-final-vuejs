@@ -2,7 +2,7 @@
   <div>
     <b-navbar toggleable="lg" type="dark" variant="dark">
       <b-navbar-brand to="/" href="#"
-        >n
+        >
         <img src="../assets/img/LogoPrueba.png" width="200px" alt="Kitten" />
       </b-navbar-brand>
 
